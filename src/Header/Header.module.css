@@ -1,0 +1,19 @@
+h3 {
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  margin: 0;
+  height: 77px;
+  background-color: #fff;
+}
+
+.title {
+  font-size: 25px;
+  color: rgb(18, 18, 18);
+  line-height: 77px;
+  font-weight: 600;
+  margin-left: 40px;
+  vertical-align: middle;
+}
