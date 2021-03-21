@@ -1,0 +1,29 @@
+.App {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+}
+
+.contentWrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.third {
+  background-color: yellow;
+}
+
+@media (max-width: 1200px) {
+  .App {
+    grid-template-columns: 2fr 4fr ;
+  }
+  .contentWrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 960px) {
+  .App {
+    grid-template-columns: 1fr ;
+  }
+}
+
+

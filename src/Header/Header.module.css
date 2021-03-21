@@ -7,13 +7,33 @@ h3 {
   margin: 0;
   height: 77px;
   background-color: #fff;
+
+  display: flex;
+  justify-content: left;
+  align-items: center;
 }
 
 .title {
   font-size: 25px;
   color: rgb(18, 18, 18);
-  line-height: 77px;
   font-weight: 600;
   margin-left: 40px;
   vertical-align: middle;
 }
+
+.navIcon {
+  margin-left: 2rem;
+  font-size: 2rem;
+  height: 80px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+
+@media (max-width: 960px) {
+  .navIcon{
+    display: flex;
+  }
+}
+
