@@ -1,0 +1,46 @@
+input, textarea, select, input:checked, input:focus {
+    -webkit-appearance: none;
+    border:none;
+    outline:none;
+    padding:0;
+}
+
+.Matrix {
+  position: relative;
+  display: flex;
+  max-width: 100px;
+  margin: 1px;
+}
+
+
+.matrixWrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+
+  padding: 3px 8px;
+  border-left: 2px solid #000;
+  border-right: 2px solid #000;
+  border-radius: 10px;
+  position: relative;
+}
+
+.col {
+  display: flex;
+  flex-direction: row;
+  width: auto;
+}
+
+.col input {
+  width: 50px;
+  padding: 4px;
+  margin: 3px;
+  border-radius: 5px;
+  text-align: center;
+  border: 1px solid #d6d6d6;
+}
+
+.col input:hover {
+  border: 1px solid #b0b0b0;
+  background-color: #fafafa;
+}
