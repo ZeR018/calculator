@@ -103,5 +103,6 @@
   }
   .sidebar {
     height: auto;
+    min-height: auto;
   }
 }

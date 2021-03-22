@@ -6,7 +6,7 @@ import SubMenu from "./SubMenu";
 
 
 const Sidebar = () => {
-	const {isSidebarOpen} = useSelector(sidebar => {
+	const {isSidebarOpen} = useSelector(({sidebar}) => {
 		return {
 			isSidebarOpen: sidebar.isSidebarOpen,
 		};

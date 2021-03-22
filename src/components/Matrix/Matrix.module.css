@@ -8,8 +8,8 @@ input, textarea, select, input:checked, input:focus {
 .Matrix {
   position: relative;
   display: flex;
-  max-width: 100px;
   margin: 1px;
+  justify-content: center;
 }
 
 
