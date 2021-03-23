@@ -1,8 +1,9 @@
 import React from 'react';
-import Header from "./Header";
+import Header from "../Header";
 import styles from './App.module.css'
-import Sidebar from "./components/Sidebar/Sidebar";
-import MatrixForm from "./components/MatrixForm";
+import Sidebar from "../components/Sidebar/Sidebar";
+import {Route} from 'react-router-dom';
+import Determinant from '../pages/matrix/Determinant'
 
 function App() {
   return (
@@ -13,9 +14,7 @@ function App() {
           <Sidebar />
         </div>
         <div className={styles.contentWrapper}>
-          <div className={styles.second}>
-            <MatrixForm />
-          </div>
+          <Route path='/matrix/determinant' component={Determinant} />
           <div className={styles.third}>Решение</div>
         </div>
       </div>

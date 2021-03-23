@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Sidebar.module.css'
 import {useSelector} from "react-redux";
-import {sidebarData} from './SidebarData'
+import {sidebarData} from '../../data/SidebarData'
 import SubMenu from "./SubMenu";
 
 

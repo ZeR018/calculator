@@ -12,3 +12,26 @@
   margin: 10px 0;
 }
 
+.matrix{
+  margin: 50px 0;
+}
+
+.matrixButtons{
+  display: flex;
+  justify-content: space-around;
+}
+
+.matrixButtons button{
+  font-size: 16px;
+  border: none;
+  outline: none;
+  padding: 3px;
+  margin: 5px;
+  background-color: #fff;
+  cursor: pointer;
+  font-weight: 500;
+}
+.matrixButtons button:hover {
+  background-color: #f0f0f0;
+  box-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
