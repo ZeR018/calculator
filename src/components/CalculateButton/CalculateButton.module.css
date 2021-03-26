@@ -1,0 +1,19 @@
+.CalculateButton {
+  display: flex;
+  justify-content: center;
+}
+
+.CalculateButton button {
+  font-size: 24px;
+  padding: 8px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: #fff;
+}
+
+.CalculateButton button:hover {
+  background-color: #f0f0f0;
+  box-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+

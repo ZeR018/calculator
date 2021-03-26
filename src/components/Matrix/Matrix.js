@@ -1,17 +1,15 @@
 import React from 'react';
 import styles from './Matrix.module.css'
+import {useDispatch} from "react-redux";
+import {setMatrixElement} from "../../store/actions/matrix";
 
 
 
-const Matrix = ({rows, cols}) => {
+const Matrix = ({matrix}) => {
 	//let matrix = new Array(rows).fill(Array(cols).fill(0));
 	
-	// Создает двумерный массив размера cols*rows заполненный нулями для map'a 
-	let matrix = new Array(cols);
-	for (var i = 0; i < matrix.length; i++) {
-  matrix[i] = new Array(rows).fill(0);
-	}
 
+	const dispatch = useDispatch();
 
 	return (
 		<div className={styles.Matrix}>
@@ -22,12 +20,12 @@ const Matrix = ({rows, cols}) => {
 						{row.map((col, index2) => {
 							return(
 								<input
+									value={matrix[index1][index2]}
 									onChange={(e) => {
-										matrix[index1][index2] = +e.target.value;
-										console.log(matrix);
+										dispatch(setMatrixElement(index1, index2, e.target.value))
 									}}
 									key={`matrix_${index1}_${index2}`}
-									type='number'/>
+									/>
 							)})}
 					</div>
 				)})}

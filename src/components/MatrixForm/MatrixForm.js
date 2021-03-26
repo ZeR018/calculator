@@ -3,22 +3,21 @@ import styles from './MatrixForm.module.css'
 import Matrix from "../Matrix";
 import ComplexCheckbox from "../ComplexCheckbox";
 import MatrixSizeInput from "../MatrixSizeInput";
-import {useSelector, useDispatch} from "react-redux";
-import {changeMatrixComplexType, setMatrixRows,
-	setMatrixCols, setMatrixSize} from "../../store/actions/matrix";
+import {useDispatch} from "react-redux";
+import {
+	changeMatrixComplexType, setMatrixRows,
+	setMatrixCols, setMatrixSize, clearTheMatrix, fillInWithZeroValues
+} from "../../store/actions/matrix";
 
-// Забить селект с размерами в рендер через map и забить в память
 
-const MatrixForm = ({binary}) => {
-	const {rows, cols, complex, maxSize} = useSelector(({matrix}) => {
-		return {
-			rows: matrix.rows,
-			cols: matrix.cols,
-			complex: matrix.isComplex,
-			maxSize: matrix.maxSize,
-		}
-	});
+const MatrixForm = ({binary, complex, maxSize, startCalculation, matrix, square}) => {
+
 	const dispatch = useDispatch();
+
+	// Find cols and rows
+
+	const cols = matrix.length;
+	const rows = matrix[0].length;
 
 	// Complex
 	const handleComplex = () => {
@@ -26,15 +25,26 @@ const MatrixForm = ({binary}) => {
 	};
 
 	// Matrix Size
-
 	const changeRows = (value) => {
 		dispatch(setMatrixRows(value))
 	}
 	const changeCols = (value) => {
 		dispatch(setMatrixCols(value))
 	}
-	const changeSize = (rows, cols) => {
-		dispatch(setMatrixSize(rows, cols))
+	const changeSize = (size) => {
+		dispatch(setMatrixSize(size))
+	}
+
+	// Clear matrix
+
+	const clearMatrix = () => {
+		dispatch(clearTheMatrix());
+	}
+
+	// Fill in with zero values
+
+	const fillZero = () => {
+		dispatch(fillInWithZeroValues())
 	}
 	return (
 		<div className={styles.MatrixForm}>
@@ -46,17 +56,21 @@ const MatrixForm = ({binary}) => {
 					changeCols={changeCols}
 					changeSize={changeSize}
 					maxSize={maxSize}
+					square={square}
 				/>
 				{!binary &&
 					<ComplexCheckbox complex={complex} handleComplex={handleComplex} />}
 			</div>
 			<div className={styles.matrix}>
-				<Matrix cols={cols} rows={rows}/>
+				<Matrix
+					startCalculation={startCalculation}
+					matrix={matrix}
+				/>
 			</div>
 
 			<div className={styles.matrixButtons}>
-				<button>Восстановить матрицу</button>
-				<button>Очистить</button>
+				<button onClick={fillZero}>Заполнить пустые ячейки нулями</button>
+				<button onClick={clearMatrix}>Очистить</button>
 			</div>
 		</div>
 	);

@@ -8,8 +8,17 @@ input, textarea, select, input:checked, input:focus {
 .Matrix {
   position: relative;
   display: flex;
-  margin: 1px;
+  margin: 1px 10px;
   justify-content: center;
+}
+
+.Matrix input[type='number'] {
+    -moz-appearance:textfield;
+}
+
+.Matrix input::-webkit-outer-spin-button,
+.Matrix input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
 }
 
 

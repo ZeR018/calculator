@@ -1,0 +1,27 @@
+
+
+.MatrixSizeInput {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.componentTitle {
+  font-weight: 500;
+  margin: 0 0 10px 0;
+}
+
+.MatrixSizeInput span {
+  font-size: 18px;
+}
+
+.MatrixSizeInput select {
+  padding: 3px 5px;
+  font-size: 18px;
+}
+
+.MatrixSizeInput select:hover {
+  background-color: #f0f0f0;
+  cursor: pointer;
+  box-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
