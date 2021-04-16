@@ -1,0 +1,20 @@
+.about {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  position: relative;
+  text-align: center;
+}
+
+.aboutTitle {
+  font-weight: 500;
+  margin: 0;
+  color: #888888;
+  font-size: 14px;
+}
+
+.about p{
+  margin: 0;
+  color: #888888;
+  font-weight: 400;
+  font-size: 14px;
+}

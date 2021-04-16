@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Sum.module.css'
+import styles from './Multi.module.css'
 import MatrixForm from "../../../components/MatrixForm";
 import { aboutMethod } from '../../../data/aboutMethod'
 import CalculateButton from "../../../components/CalculateButton";
@@ -10,7 +10,7 @@ import {
 } from "../../../store/actions/matrix";
 import AboutMethod from "../../../components/AboutMethod";
 
-const Sum = () => {
+const Multi = () => {
 	const dispatch = useDispatch();
 
 	const {complex, maxSize, startCalculation, firstMatrix,
@@ -25,7 +25,7 @@ const Sum = () => {
 	});
 
 	const onStartCalculation = () => {
-		console.log('Command: calculate sum')
+		console.log('Command: calculate multiplication')
 		console.log('First Matrix:')
 		console.log(firstMatrix)
 		console.log(secondMatrix)
@@ -76,7 +76,7 @@ const Sum = () => {
 	}
 
 	return (
-		<div className={styles.Sum}>
+		<div className={styles.Multi}>
 			<h3>Матрица А</h3>
 			<MatrixForm
 				complex={complex}
@@ -104,11 +104,11 @@ const Sum = () => {
 				fillZero={fillSecondMatrixZero}
 			/>
 			<AboutMethod>
-				{aboutMethod.matrix.sum}
+				{aboutMethod.matrix.multi}
 			</AboutMethod>
 			<CalculateButton start={onStartCalculation}/>
 		</div>
 	);
 };
 
-export default Sum;
+export default Multi;

@@ -4,7 +4,8 @@ import styles from './App.module.css'
 import Sidebar from "../components/Sidebar/Sidebar";
 import {Route} from 'react-router-dom';
 import Determinant from '../pages/matrix/Determinant'
-import MatrixSun from '../pages/matrix/Sum'
+import MatrixSum from '../pages/matrix/Sum'
+import MatrixMultiplication from '../pages/matrix/Multi'
 
 
 function App() {
@@ -17,7 +18,8 @@ function App() {
 				</div>
 				<div className={styles.contentWrapper}>
 					<Route path='/matrix/determinant' component={Determinant}/>
-					<Route path='/matrix/sum' component={MatrixSun}/>
+					<Route path='/matrix/sum' component={MatrixSum}/>
+					<Route path='/matrix/multiplication' component={MatrixMultiplication}/>
 					<div className={styles.third}>Решение</div>
 				</div>
 			</div>
