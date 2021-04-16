@@ -1,18 +1,11 @@
 import React from 'react';
 import styles from './CalculateButton.module.css'
 
-const CalculateButton = ({start, matrix, isEmpty}) => {
-	const checkTheCorrectInput = () => {
-		if(isEmpty) {
-			alert('matrix empty!')
-		} else {
-			console.log('idk if this is correct', matrix)
-			start()
-		}
-	}
+const CalculateButton = ({start}) => {
+
 	return (
 		<div className={styles.CalculateButton}>
-			<button onClick={checkTheCorrectInput}>Вычислить</button>
+			<button onClick={start}>Вычислить</button>
 		</div>
 	);
 };

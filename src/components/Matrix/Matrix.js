@@ -1,15 +1,10 @@
 import React from 'react';
 import styles from './Matrix.module.css'
-import {useDispatch} from "react-redux";
-import {setMatrixElement} from "../../store/actions/matrix";
 
 
 
-const Matrix = ({matrix}) => {
-	//let matrix = new Array(rows).fill(Array(cols).fill(0));
-	
+const Matrix = ({matrix, setElement}) => {
 
-	const dispatch = useDispatch();
 
 	return (
 		<div className={styles.Matrix}>
@@ -22,7 +17,7 @@ const Matrix = ({matrix}) => {
 								<input
 									value={matrix[index1][index2]}
 									onChange={(e) => {
-										dispatch(setMatrixElement(index1, index2, e.target.value))
+										setElement(index1, index2, e.target.value)
 									}}
 									key={`matrix_${index1}_${index2}`}
 									/>

@@ -6,7 +6,6 @@ input, textarea, select, input:checked, input:focus {
 }
 
 .Matrix {
-  position: relative;
   display: flex;
   margin: 1px 10px;
   justify-content: center;

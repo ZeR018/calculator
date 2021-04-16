@@ -13,7 +13,9 @@
 }
 
 .matrix{
-  margin: 50px 0;
+  margin: 50px 0 20px;
+  min-width: 600px;
+  min-height: 200px;
 }
 
 .matrixButtons{

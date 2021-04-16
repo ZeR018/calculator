@@ -1,51 +1,18 @@
 import React from 'react';
 import styles from './MatrixForm.module.css'
 import Matrix from "../Matrix";
-import ComplexCheckbox from "../ComplexCheckbox";
 import MatrixSizeInput from "../MatrixSizeInput";
-import {useDispatch} from "react-redux";
-import {
-	changeMatrixComplexType, setMatrixRows,
-	setMatrixCols, setMatrixSize, clearTheMatrix, fillInWithZeroValues
-} from "../../store/actions/matrix";
+import ComplexCheckbox from "../ComplexCheckbox";
 
 
-const MatrixForm = ({binary, complex, maxSize, startCalculation, matrix, square}) => {
-
-	const dispatch = useDispatch();
+const MatrixForm = ({maxSize, startCalculation, matrix, square,
+											setElement, changeRows, changeCols, complex,
+											changeSize, clearMatrix, fillZero }) => {
 
 	// Find cols and rows
-
 	const cols = matrix.length;
 	const rows = matrix[0].length;
 
-	// Complex
-	const handleComplex = () => {
-		dispatch(changeMatrixComplexType());
-	};
-
-	// Matrix Size
-	const changeRows = (value) => {
-		dispatch(setMatrixRows(value))
-	}
-	const changeCols = (value) => {
-		dispatch(setMatrixCols(value))
-	}
-	const changeSize = (size) => {
-		dispatch(setMatrixSize(size))
-	}
-
-	// Clear matrix
-
-	const clearMatrix = () => {
-		dispatch(clearTheMatrix());
-	}
-
-	// Fill in with zero values
-
-	const fillZero = () => {
-		dispatch(fillInWithZeroValues())
-	}
 	return (
 		<div className={styles.MatrixForm}>
 			<div className={styles.params}>
@@ -58,16 +25,15 @@ const MatrixForm = ({binary, complex, maxSize, startCalculation, matrix, square}
 					maxSize={maxSize}
 					square={square}
 				/>
-				{!binary &&
-					<ComplexCheckbox complex={complex} handleComplex={handleComplex} />}
+				<ComplexCheckbox complex={complex}/>
 			</div>
 			<div className={styles.matrix}>
 				<Matrix
 					startCalculation={startCalculation}
 					matrix={matrix}
+					setElement={setElement}
 				/>
 			</div>
-
 			<div className={styles.matrixButtons}>
 				<button onClick={fillZero}>Заполнить пустые ячейки нулями</button>
 				<button onClick={clearMatrix}>Очистить</button>

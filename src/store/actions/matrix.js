@@ -37,3 +37,33 @@ export const clearTheMatrix = () => ({
 export const fillInWithZeroValues = () => ({
 	type: 'FILL_ZERO',
 });
+
+//Second matrix
+
+export const setSecondMatrixRows = (value) => ({
+	type: 'SET_ROWS_FOR_SECOND',
+	payload: value,
+});
+
+export const setSecondMatrixCols = (value) => ({
+	type: 'SET_COLS_FOR_SECOND',
+	payload: value,
+});
+
+export const setSecondMatrixSize = (size) => ({
+	type: 'SET_SIZE_FOR_SECOND',
+	payload: size,
+});
+
+export const setSecondMatrixElement = (i, j, value) => ({
+	type: 'SET_SECOND_MATRIX_ELEMENT',
+	payload: {i, j, value}
+});
+
+export const clearTheSecondMatrix = () => ({
+	type: 'CLEAR_THE_SECOND_MATRIX',
+});
+
+export const fillInWithZeroValuesSecondMatrix = () => ({
+	type: 'FILL_ZERO_SECOND_MATRIX',
+});
