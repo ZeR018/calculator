@@ -7,6 +7,8 @@ import { useSelector, useDispatch } from "react-redux";
 import {setMatrixRows, setMatrixCols, setMatrixSize,
 	clearTheMatrix, fillInWithZeroValues, setMatrixElement} from "../../../store/actions/matrix";
 import AboutMethod from "../../../components/AboutMethod";
+import axios from "axios";
+import {URL} from '../../../data/constants'
 
 const Determinant = () => {
 	const dispatch = useDispatch()
@@ -21,9 +23,16 @@ const Determinant = () => {
 	});
 
 	const onStartCalculation = () => {
-		console.log('Comand: calculate determinant')
-		console.log('Matrix:')
 		console.log(matrix)
+		axios.post(URL, {
+			'type':'matrix',
+			'data':{'operation':'det', 'values':matrix}
+		})
+			.then(response => {
+				console.log(response)
+			})
+		//Сохранять response
+		//Создать state с результатом
 	}
 
 	// Matrix Size

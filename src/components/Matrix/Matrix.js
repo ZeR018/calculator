@@ -17,7 +17,7 @@ const Matrix = ({matrix, setElement}) => {
 								<input
 									value={matrix[index1][index2]}
 									onChange={(e) => {
-										setElement(index1, index2, e.target.value)
+										setElement(index1, index2, +e.target.value)
 									}}
 									key={`matrix_${index1}_${index2}`}
 									/>
