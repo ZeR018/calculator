@@ -6,9 +6,11 @@ import {Route} from 'react-router-dom';
 import Determinant from '../pages/matrix/Determinant'
 import MatrixSum from '../pages/matrix/Sum'
 import MatrixMultiplication from '../pages/matrix/Multi'
+import ReverseMatrix from '../pages/matrix/Reverse'
 
 
 function App() {
+
 	return (
 		<div>
 			<Header/>
@@ -20,6 +22,7 @@ function App() {
 					<Route path='/matrix/determinant' component={Determinant}/>
 					<Route path='/matrix/sum' component={MatrixSum}/>
 					<Route path='/matrix/multiplication' component={MatrixMultiplication}/>
+					<Route path='/matrix/reverse' component={ReverseMatrix}/>
 					<div className={styles.third}>Решение</div>
 				</div>
 			</div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Determinant.module.css'
+import styles from './Reverse.module.css'
 import MatrixForm from "../../../components/MatrixForm";
 import { aboutMethod } from '../../../data/aboutMethod'
 import CalculateButton from "../../../components/CalculateButton";
@@ -8,7 +8,7 @@ import {setMatrixRows, setMatrixCols, setMatrixSize,
 	clearTheMatrix, fillInWithZeroValues, setMatrixElement} from "../../../store/actions/matrix";
 import AboutMethod from "../../../components/AboutMethod";
 
-const Determinant = () => {
+const Reverse = () => {
 	const dispatch = useDispatch()
 
 	const {complex, maxSize, startCalculation, matrix} = useSelector(({matrix}) => {
@@ -51,7 +51,7 @@ const Determinant = () => {
 		dispatch(fillInWithZeroValues())
 	}
 	return (
-		<div className={styles.Determinant}>
+		<div className={styles.Reverse}>
 			<MatrixForm
 				complex={complex}
 				maxSize={maxSize}
@@ -66,11 +66,11 @@ const Determinant = () => {
 				square
 			/>
 			<AboutMethod>
-				{aboutMethod.matrix.determinant}
+				{aboutMethod.matrix.reverse}
 			</AboutMethod>
 			<CalculateButton start={onStartCalculation}/>
 		</div>
 	);
 };
 
-export default Determinant;
+export default Reverse;
