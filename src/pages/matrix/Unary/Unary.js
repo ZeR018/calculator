@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Determinant.module.css'
+import styles from './Unary.module.css'
 import MatrixForm from "../../../components/MatrixForm";
 import { aboutMethod } from '../../../data/aboutMethod'
 import CalculateButton from "../../../components/CalculateButton";
@@ -10,7 +10,7 @@ import AboutMethod from "../../../components/AboutMethod";
 import axios from "axios";
 import {URL} from '../../../data/constants'
 
-const Determinant = () => {
+const Unary = () => {
 	const dispatch = useDispatch()
 
 	const {complex, maxSize, startCalculation, matrix} = useSelector(({matrix}) => {
@@ -22,11 +22,50 @@ const Determinant = () => {
 		}
 	});
 
-	const onStartCalculation = () => {
-		console.log(matrix)
+	const onStartDeterminant = () => {
+		console.log('det')
 		axios.post(URL, {
 			'type':'matrix',
 			'data':{'operation':'det', 'values':matrix}
+		})
+			.then(response => {
+				console.log(response)
+			})
+		//Сохранять response
+		//Создать state с результатом
+	}
+
+	const onStartReverse = () => {
+		console.log('reverse')
+		axios.post(URL, {
+			'type':'matrix',
+			'data':{'operation':'reverse', 'values':matrix}
+		})
+			.then(response => {
+				console.log(response)
+			})
+		//Сохранять response
+		//Создать state с результатом
+	}
+
+		const onStartStepped = () => {
+		console.log('stepped')
+		axios.post(URL, {
+			'type':'matrix',
+			'data':{'operation':'stepped', 'values':matrix}
+		})
+			.then(response => {
+				console.log(response)
+			})
+		//Сохранять response
+		//Создать state с результатом
+	}
+
+		const onStartRank = () => {
+		console.log('rank')
+		axios.post(URL, {
+			'type':'matrix',
+			'data':{'operation':'rank', 'values':matrix}
 		})
 			.then(response => {
 				console.log(response)
@@ -60,7 +99,7 @@ const Determinant = () => {
 		dispatch(fillInWithZeroValues())
 	}
 	return (
-		<div className={styles.Determinant}>
+		<div className={styles.Unary}>
 			<MatrixForm
 				complex={complex}
 				maxSize={maxSize}
@@ -75,11 +114,27 @@ const Determinant = () => {
 				square
 			/>
 			<AboutMethod>
-				{aboutMethod.matrix.determinant}
+				{aboutMethod.matrix.unary}
 			</AboutMethod>
-			<CalculateButton start={onStartCalculation}/>
+			<div className={styles.buttons}>
+				<CalculateButton start={onStartDeterminant}>
+					det
+				</CalculateButton>
+
+				<CalculateButton start={onStartReverse}>
+					A^-1
+				</CalculateButton>
+
+				<CalculateButton start={onStartRank}>
+					Rank
+				</CalculateButton>
+
+				<CalculateButton start={onStartStepped}>
+					Ступенчатый вид
+				</CalculateButton>
+			</div>
 		</div>
 	);
 };
 
-export default Determinant;
+export default Unary;

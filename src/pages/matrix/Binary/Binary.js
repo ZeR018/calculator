@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Sum.module.css'
+import styles from './Binary.module.css'
 import MatrixForm from "../../../components/MatrixForm";
 import { aboutMethod } from '../../../data/aboutMethod'
 import CalculateButton from "../../../components/CalculateButton";
@@ -10,7 +10,7 @@ import {
 } from "../../../store/actions/matrix";
 import AboutMethod from "../../../components/AboutMethod";
 
-const Sum = () => {
+const Binary = () => {
 	const dispatch = useDispatch();
 
 	const {complex, maxSize, startCalculation, firstMatrix,
@@ -24,8 +24,15 @@ const Sum = () => {
 		}
 	});
 
-	const onStartCalculation = () => {
+	const onStartSum = () => {
 		console.log('Command: calculate sum')
+		console.log('First Matrix:')
+		console.log(firstMatrix)
+		console.log(secondMatrix)
+	}
+
+	const onStartMulty = () => {
+		console.log('Command: calculate multy')
 		console.log('First Matrix:')
 		console.log(firstMatrix)
 		console.log(secondMatrix)
@@ -76,7 +83,7 @@ const Sum = () => {
 	}
 
 	return (
-		<div className={styles.Sum}>
+		<div className={styles.Binary}>
 			<h3>Матрица А</h3>
 			<MatrixForm
 				complex={complex}
@@ -104,11 +111,18 @@ const Sum = () => {
 				fillZero={fillSecondMatrixZero}
 			/>
 			<AboutMethod>
-				{aboutMethod.matrix.sum}
+				{aboutMethod.matrix.binary}
 			</AboutMethod>
-			<CalculateButton start={onStartCalculation}/>
+				<div className={styles.buttons}>
+					<CalculateButton start={onStartSum}>
+						A + B
+					</CalculateButton>
+					<CalculateButton start={onStartMulty}>
+						A * B
+					</CalculateButton>
+				</div>
+
 		</div>
 	);
 };
-
-export default Sum;
+export default Binary;
