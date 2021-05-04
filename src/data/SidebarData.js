@@ -11,24 +11,14 @@ export const sidebarData = [
 		iconOpened: <IoIosArrowUp />,
 		subNav: [
 			{
-				title: 'Умножение',
-				path: '/matrix/multiplication',
-				icon: '*',
-			},
-			{
-				title: 'Сумма',
-				path: '/matrix/sum',
+				title: 'Бинарные операции',
+				path: '/matrix/binary',
 				icon: '+',
 			},
 			{
-				title: 'Определитель',
-				path: '/matrix/determinant',
+				title: 'Унарные операции',
+				path: '/matrix/unary',
 				icon: 'det',
-			},
-			{
-				title: 'Обратная',
-				path: '/matrix/reverse',
-				icon: '1/m',
 			},
 		]
 	},

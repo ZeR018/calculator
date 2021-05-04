@@ -1,0 +1,18 @@
+.Unary{
+  margin-top: 100px;
+  margin-bottom: 20px;
+
+}
+
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  margin: 0 40px;
+}
+.buttons div {
+  margin: 5px;
+}
+.Unary {
+  margin-bottom: 70px;
+}

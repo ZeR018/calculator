@@ -1,0 +1,15 @@
+
+.Binary h3 {
+  text-align: center;
+  margin: 25px 0;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  margin: 0 40px;
+}
+
+.Binary {
+  margin-bottom: 70px;
+}

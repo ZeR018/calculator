@@ -3,10 +3,8 @@ import Header from "../Header";
 import styles from './App.module.css'
 import Sidebar from "../components/Sidebar/Sidebar";
 import {Route} from 'react-router-dom';
-import Determinant from '../pages/matrix/Determinant'
-import MatrixSum from '../pages/matrix/Sum'
-import MatrixMultiplication from '../pages/matrix/Multi'
-import ReverseMatrix from '../pages/matrix/Reverse'
+import MatrixBinary from '../pages/matrix/Binary'
+import MatrixUnary from '../pages/matrix/Unary'
 
 
 function App() {
@@ -19,10 +17,8 @@ function App() {
 					<Sidebar/>
 				</div>
 				<div className={styles.contentWrapper}>
-					<Route path='/matrix/determinant' component={Determinant}/>
-					<Route path='/matrix/sum' component={MatrixSum}/>
-					<Route path='/matrix/multiplication' component={MatrixMultiplication}/>
-					<Route path='/matrix/reverse' component={ReverseMatrix}/>
+					<Route path='/matrix/binary' component={MatrixBinary}/>
+					<Route path='/matrix/unary' component={MatrixUnary}/>
 					<div className={styles.third}>Решение</div>
 				</div>
 			</div>
