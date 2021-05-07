@@ -4,38 +4,66 @@ import MatrixForm from "../../../components/MatrixForm";
 import { aboutMethod } from '../../../data/aboutMethod'
 import CalculateButton from "../../../components/CalculateButton";
 import { useSelector, useDispatch } from "react-redux";
-import {
+import { changeMatrixComplexType,
 	setMatrixRows, setMatrixCols, setMatrixSize, clearTheMatrix,
-	fillInWithZeroValues, setMatrixElement, setSecondMatrixRows, setSecondMatrixCols, setSecondMatrixSize
-} from "../../../store/actions/matrix";
+	fillInWithZeroValues, setMatrixElement,
+	setSecondMatrixRows, setSecondMatrixCols, setSecondMatrixSize,
+	fillInWithZeroValuesSecondMatrix, clearTheSecondMatrix, setSecondMatrixElement
+		} from "../../../store/actions/matrix";
 import AboutMethod from "../../../components/AboutMethod";
+import axios from "axios";
+import {URL} from '../../../data/constants'
 
 const Binary = () => {
 	const dispatch = useDispatch();
 
-	const {complex, maxSize, startCalculation, firstMatrix,
+	const {complex, maxSize, firstMatrix,
 		secondMatrix} = useSelector(({matrix}) => {
 		return {
 			complex: matrix.isComplex,
 			maxSize: matrix.maxSize,
-			startCalculation: matrix.startCalculation,
 			firstMatrix: matrix.matrix,
 			secondMatrix: matrix.secondMatrix,
 		}
 	});
 
 	const onStartSum = () => {
-		console.log('Command: calculate sum')
-		console.log('First Matrix:')
-		console.log(firstMatrix)
-		console.log(secondMatrix)
+		console.log('sum')
+		axios.post(URL, {
+			'type':'twomatrix',
+			'data':{'operation':'+', 'values': {'matrix1': firstMatrix, 'matrix2': secondMatrix}}
+		})
+			.then(response => {
+				console.log(response)
+			})
+		//Сохранять response
+		//Создать state с результатом
+	}
+
+	const onStartSub = () => {
+		console.log('sub')
+		axios.post(URL, {
+			'type':'twomatrix',
+			'data':{'operation':'-', 'values': {'matrix1': firstMatrix, 'matrix2': secondMatrix}}
+		})
+			.then(response => {
+				console.log(response)
+			})
+		//Сохранять response
+		//Создать state с результатом
 	}
 
 	const onStartMulty = () => {
-		console.log('Command: calculate multy')
-		console.log('First Matrix:')
-		console.log(firstMatrix)
-		console.log(secondMatrix)
+		console.log('multy')
+		axios.post(URL, {
+			'type':'twomatrix',
+			'data':{'operation':'*', 'values': {'matrix1': firstMatrix, 'matrix2': secondMatrix}}
+		})
+			.then(response => {
+				console.log(response)
+			})
+		//Сохранять response
+		//Создать state с результатом
 	}
 
 	//first matrix
@@ -71,15 +99,21 @@ const Binary = () => {
 		dispatch(setSecondMatrixSize(size))
 	}
 	const setElementSecondMatrix = (index1, index2, value) => {
-		dispatch(setElementSecondMatrix(index1, index2, value))
+		dispatch(setSecondMatrixElement(index1, index2, value))
 	}
 	//Clear
 	const clearSecondMatrix = () => {
-		dispatch(clearSecondMatrix());
+		dispatch(clearTheSecondMatrix());
 	}
 	// Fill in with zero values
 	const fillSecondMatrixZero = () => {
-		dispatch(fillSecondMatrixZero())
+		dispatch(fillInWithZeroValuesSecondMatrix())
+	}
+
+	// Complex
+
+	const handleComplex = () => {
+		dispatch(changeMatrixComplexType())
 	}
 
 	return (
@@ -88,7 +122,6 @@ const Binary = () => {
 			<MatrixForm
 				complex={complex}
 				maxSize={maxSize}
-				startCalculation={startCalculation}
 				matrix={firstMatrix}
 				changeRows={changeFirstMatrixRows}
 				changeCols={changeFirstMatrixCols}
@@ -96,12 +129,12 @@ const Binary = () => {
 				setElement={setElementFirstMatrix}
 				clearMatrix={clearFirstMatrix}
 				fillZero={fillFirstMatrixZero}
+				handleComplex={handleComplex}
 			/>
 			<h3>Матрица B</h3>
 			<MatrixForm
 				complex={complex}
 				maxSize={maxSize}
-				startCalculation={startCalculation}
 				matrix={secondMatrix}
 				changeRows={changeSecondMatrixRows}
 				changeCols={changeSecondMatrixCols}
@@ -109,18 +142,25 @@ const Binary = () => {
 				setElement={setElementSecondMatrix}
 				clearMatrix={clearSecondMatrix}
 				fillZero={fillSecondMatrixZero}
+				handleComplex={handleComplex}
 			/>
-			<AboutMethod>
-				{aboutMethod.matrix.binary}
-			</AboutMethod>
 				<div className={styles.buttons}>
 					<CalculateButton start={onStartSum}>
 						A + B
 					</CalculateButton>
+
+					<CalculateButton start={onStartSub}>
+						A - B
+					</CalculateButton>
+
 					<CalculateButton start={onStartMulty}>
 						A * B
 					</CalculateButton>
+
 				</div>
+			<AboutMethod>
+				{aboutMethod.matrix.binary}
+			</AboutMethod>
 
 		</div>
 	);

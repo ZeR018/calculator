@@ -5,9 +5,9 @@ import MatrixSizeInput from "../MatrixSizeInput";
 import ComplexCheckbox from "../ComplexCheckbox";
 
 
-const MatrixForm = ({maxSize, startCalculation, matrix, square,
+const MatrixForm = ({maxSize, matrix, square,
 											setElement, changeRows, changeCols, complex,
-											changeSize, clearMatrix, fillZero }) => {
+											changeSize, clearMatrix, fillZero, handleComplex}) => {
 
 	// Find cols and rows
 	const cols = matrix.length;
@@ -25,11 +25,10 @@ const MatrixForm = ({maxSize, startCalculation, matrix, square,
 					maxSize={maxSize}
 					square={square}
 				/>
-				<ComplexCheckbox complex={complex}/>
+				<ComplexCheckbox complex={complex} handleComplex={handleComplex}/>
 			</div>
 			<div className={styles.matrix}>
 				<Matrix
-					startCalculation={startCalculation}
 					matrix={matrix}
 					setElement={setElement}
 				/>

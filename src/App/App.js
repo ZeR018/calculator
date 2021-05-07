@@ -5,6 +5,7 @@ import Sidebar from "../components/Sidebar/Sidebar";
 import {Route} from 'react-router-dom';
 import MatrixBinary from '../pages/matrix/Binary'
 import MatrixUnary from '../pages/matrix/Unary'
+import Lim from "../pages/Lim";
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
 				<div className={styles.contentWrapper}>
 					<Route path='/matrix/binary' component={MatrixBinary}/>
 					<Route path='/matrix/unary' component={MatrixUnary}/>
+					<Route path='/lim' component={Lim}/>
 					<div className={styles.third}>Решение</div>
 				</div>
 			</div>

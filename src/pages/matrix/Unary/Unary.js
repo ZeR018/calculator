@@ -4,7 +4,7 @@ import MatrixForm from "../../../components/MatrixForm";
 import { aboutMethod } from '../../../data/aboutMethod'
 import CalculateButton from "../../../components/CalculateButton";
 import { useSelector, useDispatch } from "react-redux";
-import {setMatrixRows, setMatrixCols, setMatrixSize,
+import {setMatrixRows, setMatrixCols, setMatrixSize, changeMatrixComplexType,
 	clearTheMatrix, fillInWithZeroValues, setMatrixElement} from "../../../store/actions/matrix";
 import AboutMethod from "../../../components/AboutMethod";
 import axios from "axios";
@@ -98,6 +98,12 @@ const Unary = () => {
 	const fillZero = () => {
 		dispatch(fillInWithZeroValues())
 	}
+
+	//Complex
+
+	const handleComplex = () => {
+		dispatch(changeMatrixComplexType())
+	}
 	return (
 		<div className={styles.Unary}>
 			<MatrixForm
@@ -112,10 +118,9 @@ const Unary = () => {
 				clearMatrix={clearMatrix}
 				fillZero={fillZero}
 				square
+				handleComplex={handleComplex}
 			/>
-			<AboutMethod>
-				{aboutMethod.matrix.unary}
-			</AboutMethod>
+
 			<div className={styles.buttons}>
 				<CalculateButton start={onStartDeterminant}>
 					det
@@ -133,6 +138,9 @@ const Unary = () => {
 					Ступенчатый вид
 				</CalculateButton>
 			</div>
+			<AboutMethod>
+				{aboutMethod.matrix.unary}
+			</AboutMethod>
 		</div>
 	);
 };

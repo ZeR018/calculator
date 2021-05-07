@@ -23,6 +23,20 @@ export const sidebarData = [
 		]
 	},
 	{
+		title: 'Выражения',
+		path: '/expressions',
+		icon: 'exp',
+		iconClosed: <IoIosArrowDown />,
+		iconOpened: <IoIosArrowUp />,
+	},
+	{
+		title: 'Предел',
+		path: '/lim',
+		icon: 'lim',
+		iconClosed: <IoIosArrowDown />,
+		iconOpened: <IoIosArrowUp />,
+	},
+	{
 		title: 'Производная',
 		path: '/derivative',
 		icon: 'dx',

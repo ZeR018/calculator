@@ -14,5 +14,7 @@ export const aboutMethod = {
 		<p>
 			Вычисление суммы и произведения матриц
 		</p>,
-	}
+	},
+	expression: <p>Выражение</p>
+
 }

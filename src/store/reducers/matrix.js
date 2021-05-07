@@ -125,14 +125,13 @@ const matrix = (state = initialState, action) => {
 		}
 
 		case 'SET_SECOND_MATRIX_ELEMENT':
-			const newValue8 = { ...state }.matrix.slice();
+			const newValue8 = { ...state }.secondMatrix.slice();
 			newValue8[action.payload.i][action.payload.j] = action.payload.value
 			return {
 				...state,
 				secondMatrix: newValue8,
 				isSecondEmpty: false,
 		}
-
 		case 'CLEAR_THE_SECOND_MATRIX' :
 			const newValue9 = { ...state }.secondMatrix.slice();
 			for(let i = 0; i < newValue9.length; i++){

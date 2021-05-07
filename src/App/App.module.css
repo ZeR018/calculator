@@ -6,6 +6,8 @@
 .contentWrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
+
+  /*box-shadow: inset -20px 18px 30px #632ce4;*/
 }
 .third {
   background-color: yellow;

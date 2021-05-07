@@ -7,9 +7,9 @@
 .buttons {
   display: flex;
   justify-content: space-around;
-  margin: 0 40px;
+  margin: 20px 40px;
 }
 
 .Binary {
-  margin-bottom: 70px;
+  margin-bottom: 60px;
 }
