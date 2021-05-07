@@ -38,7 +38,7 @@ export const sidebarData = [
 	},
 	{
 		title: 'Производная',
-		path: '/derivative',
+		path: '/Derivative',
 		icon: 'dx',
 		iconClosed: <IoIosArrowDown />,
 		iconOpened: <IoIosArrowUp />,

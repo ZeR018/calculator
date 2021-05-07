@@ -1,0 +1,83 @@
+
+.Derivative{
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    vertical-align: center;
+    justify-content: center;
+}
+
+.Derivative h3 {
+    margin-left: 40px;
+    margin-bottom: 40px;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.wrapper {
+    margin-top: 100px;
+}
+
+.DerivativeInput {
+    display: flex;
+    align-items: center;
+    vertical-align: center;
+    justify-content: center;
+}
+
+.DerivativeInput span {
+    font-size: 24px;
+}
+
+.underLim {
+    margin-bottom: 40px;
+}
+
+.lims {
+    box-sizing: border-box;
+    border-bottom: 1px solid #c2c0c0;
+    padding: 5px;
+    font-size: 20px;
+    margin: 0 10px;
+    width: 40px;
+}
+
+.DerivativeButtons{
+  display: flex;
+  justify-content: space-around;
+
+  margin-bottom: 40px;
+}
+
+.DerivativeButtons button{
+  font-size: 16px;
+  border: none;
+  outline: none;
+  padding: 3px;
+  margin: 5px;
+  background-color: #fff;
+  cursor: pointer;
+  font-weight: 500;
+}
+.DerivativeButtons button:hover {
+  background-color: #f0f0f0;
+  box-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+.calcButton{
+    margin-top: 40px;
+}
+
+.derSettings {
+  margin: 5px 0 10px;
+}
+
+.derSettings input {
+  box-sizing: border-box;
+  border-bottom: 1px solid #c2c0c0;
+  padding: 2px;
+  font-size: 16px;
+  margin: 0 5px;
+  width: 20px;
+}
