@@ -4,6 +4,7 @@ import matrix from "./matrix";
 import lim from "./lim";
 import expression from "./expression";
 import derivative from "./derivative";
+import integral from "./integral";
 
 
 const reducer = combineReducers({
@@ -12,6 +13,7 @@ const reducer = combineReducers({
 	lim,
 	expression,
 	derivative,
+	integral,
 });
 
 export default reducer;

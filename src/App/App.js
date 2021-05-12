@@ -8,6 +8,7 @@ import MatrixUnary from '../pages/matrix/Unary'
 import Lim from "../pages/Lim";
 import Expression from "../pages/Expression";
 import Derivative from "../pages/Derivative";
+import Undefined from "../pages/integral/Undefined";
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
 					<Route path='/lim' component={Lim}/>
 					<Route path='/expressions' component={Expression}/>
 					<Route path='/derivative' component={Derivative}/>
+					<Route path='/integral/undefined' component={Undefined}/>
 					<div className={styles.third}>Решение</div>
 				</div>
 			</div>

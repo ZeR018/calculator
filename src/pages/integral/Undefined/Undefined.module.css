@@ -1,5 +1,5 @@
 
-.Lim{
+.Undefined{
     height: 100%;
 
     display: flex;
@@ -8,7 +8,7 @@
     justify-content: center;
 }
 
-.Lim h3 {
+.Undefined h3 {
     margin-left: 40px;
     margin-bottom: 40px;
     font-size: 24px;
@@ -19,37 +19,26 @@
     margin-top: 100px;
 }
 
-.limInput {
+.intInput {
     display: flex;
     align-items: center;
     vertical-align: center;
     justify-content: center;
 }
 
-.limInput span {
-    font-size: 24px;
+.intInput span {
+  font-size: 48px;
+  font-weight: 300;
 }
 
-.underLim {
+.intButtons{
+  display: flex;
+  justify-content: space-around;
+
     margin-bottom: 40px;
 }
 
-.lims {
-  box-sizing: border-box;
-  border-bottom: 1px solid #c2c0c0;
-  padding: 5px;
-  font-size: 20px;
-  margin: 0 10px;
-  width: 40px;
-}
-
-.LimButtons{
-  display: flex;
-  justify-content: space-around;
-  margin-bottom: 40px;
-}
-
-.LimButtons button{
+.intButtons button{
   font-size: 16px;
   border: none;
   outline: none;
@@ -59,11 +48,25 @@
   cursor: pointer;
   font-weight: 500;
 }
-.LimButtons button:hover {
+.intButtons button:hover {
   background-color: #f0f0f0;
   box-shadow: 0 0 5px rgba(0,0,0,0.5);
 }
 
 .calcButton{
     margin-top: 40px;
+}
+
+.d {
+  box-sizing: border-box;
+  border-bottom: 1px solid #c2c0c0;
+  padding: 5px;
+  font-size: 20px;
+  margin: 5px;
+  width: 30px;
+}
+
+.intInput i{
+  margin-top: 5px;
+  font-size: 24px;
 }
