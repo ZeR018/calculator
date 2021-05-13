@@ -9,6 +9,7 @@ import Lim from "../pages/Lim";
 import Expression from "../pages/Expression";
 import Derivative from "../pages/Derivative";
 import Undefined from "../pages/integral/Undefined";
+import Definite from "../pages/integral/Defined";
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
 					<Route path='/expressions' component={Expression}/>
 					<Route path='/derivative' component={Derivative}/>
 					<Route path='/integral/undefined' component={Undefined}/>
+					<Route path='/integral/definite' component={Definite}/>
 					<div className={styles.third}>Решение</div>
 				</div>
 			</div>

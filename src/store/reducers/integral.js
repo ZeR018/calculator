@@ -3,6 +3,8 @@ const initialState = {
 	undefinedVar: 'x',
 	defined: '',
 	definedVar: 'x',
+	upperIntegrationLimit: '',
+	loverIntegrationLimit: '',
 }
 
 const integral = (state = initialState, action) => {
@@ -44,6 +46,20 @@ const integral = (state = initialState, action) => {
 				...state,
 				defined: '',
 				definedVar: initialState.definedVar,
+				upperIntegrationLimit: '',
+				loverIntegrationLimit: '',
+			}
+
+		case 'SET_UPPER_INTEGRATION_LIMIT':
+			return {
+				...state,
+				upperIntegrationLimit: action.payload,
+			}
+			
+			case 'SET_LOVER_INTEGRATION_LIMIT':
+			return {
+				...state,
+				loverIntegrationLimit: action.payload,
 			}
 
 		default: return state

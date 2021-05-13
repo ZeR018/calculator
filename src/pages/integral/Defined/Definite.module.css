@@ -1,0 +1,88 @@
+
+.Undefined{
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    vertical-align: center;
+    justify-content: center;
+}
+
+.Undefined h3 {
+    margin-left: 40px;
+    margin-bottom: 40px;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.wrapper {
+    margin-top: 100px;
+}
+
+.intInput {
+    display: flex;
+    align-items: center;
+    vertical-align: center;
+    justify-content: center;
+}
+
+.intInput span {
+  font-size: 48px;
+  font-weight: 300;
+}
+
+.intButtons{
+  display: flex;
+  justify-content: space-around;
+
+    margin-bottom: 40px;
+}
+
+.intButtons button{
+  font-size: 16px;
+  border: none;
+  outline: none;
+  padding: 3px;
+  margin: 5px;
+  background-color: #fff;
+  cursor: pointer;
+  font-weight: 500;
+}
+.intButtons button:hover {
+  background-color: #f0f0f0;
+  box-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+.calcButton{
+    margin-top: 40px;
+}
+
+.d {
+  box-sizing: border-box;
+  border-bottom: 1px solid #c2c0c0;
+  padding: 5px;
+  font-size: 20px;
+  margin: 5px;
+  width: 30px;
+}
+
+.intInput i{
+  margin-top: 5px;
+  font-size: 24px;
+}
+
+
+.integrationLims input{
+  border: 1px solid #c2c0c0;
+    padding: 2px;
+    font-size: 20px;
+    width: 30px;
+}
+
+.integrationLims:last-child{
+  margin-top: 5px;
+}
+
+.integrationLims:first-child{
+  bottom: -5px;
+}

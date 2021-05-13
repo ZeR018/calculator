@@ -25,3 +25,14 @@ export const clearUndefinedIntegral = () => ({
 export const clearDefinedIntegral = () => ({
 	type: 'CLEAR_DEFINED',
 });
+
+export const setUpperIntegrationLimit = (val) => ({
+	type: 'SET_UPPER_INTEGRATION_LIMIT',
+	payload: val,
+});
+
+export const setLoverIntegrationLimit = (val) => ({
+	type: 'SET_LOVER_INTEGRATION_LIMIT',
+	payload: val,
+});
+
