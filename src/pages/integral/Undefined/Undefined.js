@@ -7,6 +7,8 @@ import {useDispatch, useSelector} from "react-redux";
 import Input from "../../../components/Input";
 import {setValueToUndefinedIntegral, setVarToUndefinedIntegral, clearUndefinedIntegral} from '../../../store/actions/integral'
 import axios from "axios";
+import {URL} from '../../../data/constants'
+import {changeResult} from '../../../store/actions/result'
 
 const Undefined = () => {
 
@@ -27,10 +29,8 @@ const Undefined = () => {
 				'var': integralVar,
 			}})
 			.then(response => {
-				console.log(response)
+				dispatch(changeResult(response.data.response))
 			})
-		//Сохранять response
-		//Создать state с результатом
 	}
 
 	const setIntegralExpression = (value) => {

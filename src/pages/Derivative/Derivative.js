@@ -8,6 +8,8 @@ import {useDispatch, useSelector} from "react-redux";
 import axios from "axios";
 import {clearDerivative, setDerivative,
 setDerivativeVariable, setDerivativeIndex} from "../../store/actions/derivative";
+import {URL} from '../../data/constants'
+import {changeResult} from '../../store/actions/result'
 
 function Derivative() {
 	const dispatch = useDispatch()
@@ -26,10 +28,8 @@ function Derivative() {
 			'data': {'expression':derivative,'var':variable, 'n': index}
 		})
 			.then(response => {
-				console.log(response)
+				dispatch(changeResult(response.data.response))
 			})
-		//Сохранять response
-		//Создать state с результатом
 	}
 
 	const setExp = (value) => {

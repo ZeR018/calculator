@@ -8,6 +8,8 @@ import Input from "../../../components/Input";
 import {setValueToDefinedIntegral, setVarToDefinedIntegral, clearDefinedIntegral,
 	setUpperIntegrationLimit, setLoverIntegrationLimit} from '../../../store/actions/integral'
 import axios from "axios";
+import {URL} from '../../../data/constants'
+import {changeResult} from '../../../store/actions/result'
 
 const Definite = () => {
 
@@ -31,10 +33,8 @@ const Definite = () => {
 				'limits': [loverLimit, upperLimit],
 			}})
 			.then(response => {
-				console.log(response)
+				dispatch(changeResult(response.data.response))
 			})
-		//Сохранять response
-		//Создать state с результатом
 	}
 
 	const setIntegralExpression = (value) => {

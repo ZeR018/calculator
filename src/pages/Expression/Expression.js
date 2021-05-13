@@ -7,6 +7,8 @@ import AboutMethod from "../../components/AboutMethod";
 import {useDispatch, useSelector} from "react-redux";
 import axios from "axios";
 import {clearExprassion, setExprassion} from "../../store/actions/expression";
+import {URL} from '../../data/constants'
+import {changeResult} from '../../store/actions/result'
 
 function Expression() {
 	const dispatch = useDispatch()
@@ -23,10 +25,8 @@ function Expression() {
 			'data': expression,
 		})
 			.then(response => {
-				console.log(response)
+				dispatch(changeResult(response.data.response))
 			})
-		//Сохранять response
-		//Создать state с результатом
 	}
 
 	const setExp = (value) => {

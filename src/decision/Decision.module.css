@@ -1,0 +1,23 @@
+.Decision{
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    vertical-align: center;
+    justify-content: center;
+}
+
+.Decision span {
+    font-size: 34px;
+}
+
+.res{
+    margin-left: 30px;
+    display: block;
+    font-size: 40px;
+}
+
+@media  {
+    
+}
+

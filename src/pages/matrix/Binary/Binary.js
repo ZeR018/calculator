@@ -13,6 +13,7 @@ import { changeMatrixComplexType,
 import AboutMethod from "../../../components/AboutMethod";
 import axios from "axios";
 import {URL} from '../../../data/constants'
+import {changeResult} from '../../../store/actions/result'
 
 const Binary = () => {
 	const dispatch = useDispatch();
@@ -34,10 +35,8 @@ const Binary = () => {
 			'data':{'operation':'+', 'values': {'matrix1': firstMatrix, 'matrix2': secondMatrix}}
 		})
 			.then(response => {
-				console.log(response)
+				dispatch(changeResult(response.data.response))
 			})
-		//Сохранять response
-		//Создать state с результатом
 	}
 
 	const onStartSub = () => {
@@ -47,10 +46,8 @@ const Binary = () => {
 			'data':{'operation':'-', 'values': {'matrix1': firstMatrix, 'matrix2': secondMatrix}}
 		})
 			.then(response => {
-				console.log(response)
+				dispatch(changeResult(response.data.response))
 			})
-		//Сохранять response
-		//Создать state с результатом
 	}
 
 	const onStartMulty = () => {
@@ -60,10 +57,8 @@ const Binary = () => {
 			'data':{'operation':'*', 'values': {'matrix1': firstMatrix, 'matrix2': secondMatrix}}
 		})
 			.then(response => {
-				console.log(response)
+				dispatch(changeResult(response.data.response))
 			})
-		//Сохранять response
-		//Создать state с результатом
 	}
 
 	//first matrix

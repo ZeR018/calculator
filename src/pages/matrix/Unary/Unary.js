@@ -9,6 +9,7 @@ import {setMatrixRows, setMatrixCols, setMatrixSize, changeMatrixComplexType,
 import AboutMethod from "../../../components/AboutMethod";
 import axios from "axios";
 import {URL} from '../../../data/constants'
+import {changeResult} from '../../../store/actions/result'
 
 const Unary = () => {
 	const dispatch = useDispatch()
@@ -29,10 +30,8 @@ const Unary = () => {
 			'data':{'operation':'det', 'values':matrix}
 		})
 			.then(response => {
-				console.log(response)
+				dispatch(changeResult(response.data.response))
 			})
-		//Сохранять response
-		//Создать state с результатом
 	}
 
 	const onStartReverse = () => {
@@ -42,10 +41,8 @@ const Unary = () => {
 			'data':{'operation':'reverse', 'values':matrix}
 		})
 			.then(response => {
-				console.log(response)
+				dispatch(changeResult(response.data.response))
 			})
-		//Сохранять response
-		//Создать state с результатом
 	}
 
 		const onStartStepped = () => {
@@ -55,10 +52,8 @@ const Unary = () => {
 			'data':{'operation':'stepped', 'values':matrix}
 		})
 			.then(response => {
-				console.log(response)
+				dispatch(changeResult(response.data.response))
 			})
-		//Сохранять response
-		//Создать state с результатом
 	}
 
 		const onStartRank = () => {
@@ -68,10 +63,8 @@ const Unary = () => {
 			'data':{'operation':'rank', 'values':matrix}
 		})
 			.then(response => {
-				console.log(response)
+				dispatch(changeResult(response.data.response))
 			})
-		//Сохранять response
-		//Создать state с результатом
 	}
 
 	// Matrix Size

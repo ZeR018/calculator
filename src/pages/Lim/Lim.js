@@ -9,6 +9,8 @@ import {useDispatch, useSelector} from "react-redux";
 import {setSymbolToLimExpression, setVariableToLimExpression,
 	setStrivesForToLimExpression, clearLim} from '../../store/actions/lim'
 import axios from "axios";
+import {URL} from '../../data/constants'
+import {changeResult} from '../../store/actions/result'
 
 function Lim() {
 	const dispatch = useDispatch()
@@ -30,10 +32,8 @@ function Lim() {
 				'var': variable,
 			}})
 			.then(response => {
-				console.log(response)
+				dispatch(changeResult(response.data.response))
 			})
-		//Сохранять response
-		//Создать state с результатом
 	}
 
 	const setSymbolToExpression = (value) => {
